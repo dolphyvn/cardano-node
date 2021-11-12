@@ -9,7 +9,7 @@ ApplicationName: cardano-sl
 ApplicationVersion: 1
 
 # Minimal logging
-TurnOnLogging: False
+TurnOnLogging: True
 TurnOnLogMetrics: False
 minSeverity: Notice
 TracingVerbosity: NormalVerbosity
