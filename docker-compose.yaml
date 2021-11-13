@@ -1,0 +1,47 @@
+version: "3.3"
+services:
+  ada-relay: # relay node
+    image: dolphyvn/cardano-pool:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    container_name: ada-relay
+    network_mode: host
+    volumes:
+      - $PWD/config/local/:/config
+    environment:
+      - HOST_ADDR=0.0.0.0
+      - NODE_PORT=3001
+      - NODE_NAME=ada-relay
+      - NODE_TOPOLOGY=127.0.0.1:3000/1
+      - NODE_RELAY=True
+      - CARDANO_NETWORK=main
+      - EKG_PORT=12889
+      - PROMETHEUS_PORT=12899
+      - PROMETHEUS_HOST=127.0.0.1
+    command: --start
+    restart: unless-stopped
+  ada-producing: # block-producing node
+    image: dolphyvn/cardano-pool:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    container_name: block-producing
+    network_mode: host
+    volumes:
+      - $PWD/config/default/:/config
+    environment:
+      - HOST_ADDR=0.0.0.0
+      - NODE_PORT=3002
+      - NODE_NAME=ada-producing
+      - NODE_TOPOLOGY=127.0.0.1:3001/1
+      - NODE_RELAY=False
+      - CARDANO_NETWORK=main
+      - EKG_PORT=12888
+      - PROMETHEUS_PORT=12898
+      - PROMETHEUS_HOST=127.0.0.1
+      - POOL_PLEDGE=340
+      - POOL_COST=340000000
+      - POOL_MARGIN=0.05
+      - METADATA_URL=https://raw.githubusercontent.com/dolphyvn/cardano-node/main/config/metadata.json
+      - PUBLIC_RELAY_IP=PUBLIC
+    command: --start --staking --create
+    restart: unless-stopped
