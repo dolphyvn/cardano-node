@@ -7,7 +7,7 @@ services:
     container_name: ada-relay
     network_mode: host
     volumes:
-      - $PWD/config/local/:/config
+      - $PWD/config/default/:/config
     environment:
       - HOST_ADDR=0.0.0.0
       - NODE_PORT=3001
