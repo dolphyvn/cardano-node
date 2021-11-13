@@ -42,6 +42,6 @@ services:
       - POOL_COST=340000000
       - POOL_MARGIN=0.05
       - METADATA_URL=https://raw.githubusercontent.com/dolphyvn/cardano-node/main/config/metadata.json
-      - PUBLIC_RELAY_IP=PUBLIC
+      - PUBLIC_RELAY_IP=210.245.22.60
     command: --start --staking --create
     restart: unless-stopped
