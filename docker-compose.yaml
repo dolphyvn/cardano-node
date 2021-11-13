@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   ada-relay: # relay node
-    image: dolphyvn/cardano-pool:latest
+    image: dolphyvn/cardano-node:latest
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     container_name: ada-relay
@@ -21,7 +21,7 @@ services:
     command: --start
     restart: unless-stopped
   ada-producing: # block-producing node
-    image: dolphyvn/cardano-pool:latest
+    image: dolphyvn/cardano-node:latest
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     container_name: block-producing
