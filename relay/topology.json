@@ -1,0 +1,64 @@
+{
+    "Producers": [
+        {
+            "type": "regular",
+            "addr": "85.214.213.128",
+            "port": 6000,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "87.106.205.189",
+            "port": 6000,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "165.232.136.50",
+            "port": 6000,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "ipclub29-2.relay.my-ip.at",
+            "port": 3001,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "con-cardano-relay02.hwlegnano.it",
+            "port": 6000,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "54.228.75.154",
+            "port": 3001,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "relay1.cardano-pool.eu",
+            "port": 3001,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "213.112.46.55",
+            "port": 6001,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "52.13.79.52",
+            "port": 6000,
+            "valency": 1
+        },
+        {
+            "type": "regular",
+            "addr": "ipclub29-1.relay.my-ip.at",
+            "port": 3002,
+            "valency": 1
+        }
+    ]
+}
